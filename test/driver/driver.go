@@ -18,6 +18,13 @@ type Driver struct {
 	Health *HealthDriver
 	KV     *KVDriver
 	Users  *UserDriver
+
+	Addresses *AddressDriver
+	Calendars *CalendarDriver
+	Customers *CustomerDriver
+	Orders    *OrderDriver
+	Phones    *PhoneDriver
+	Workers   *WorkerDriver
 }
 
 func NewDriver(url string, headers req.Headers) *Driver {
@@ -28,6 +35,13 @@ func NewDriver(url string, headers req.Headers) *Driver {
 		Health:  NewHealthDriver(url, headers),
 		KV:      NewKVDriver(url, headers),
 		Users:   NewUserDriver(url, headers),
+
+		Addresses: NewAddressDriver(url, headers),
+		Calendars: NewCalendarDriver(url, headers),
+		Customers: NewCustomerDriver(url, headers),
+		Orders:    NewOrderDriver(url, headers),
+		Phones:    NewPhoneDriver(url, headers),
+		Workers:   NewWorkerDriver(url, headers),
 	}
 }
 

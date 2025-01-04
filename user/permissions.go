@@ -9,6 +9,12 @@ const (
 	PermRead         = "user:read"
 	PermDelete       = "user:delete"
 	PermReadFeatures = "user:features:read"
+
+	PermPhoneCreate = "user:phone:create"
+	PermPhoneRead   = "user:phone:read"
+	PermPhoneList   = "user:phone:list"
+	PermPhoneUpdate = "user:phone:update"
+	PermPhoneDelete = "user:phone:delete"
 )
 
 func NewRef(id string) ref.Ref {

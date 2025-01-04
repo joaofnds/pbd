@@ -16,12 +16,21 @@ import (
 	"app/adapter/uuid"
 	"app/adapter/validation"
 	"app/adapter/watermill"
+	"app/address/address_module"
 	"app/authn/authn_module"
 	"app/authz/authz_http"
+	"app/booking/booking_module"
+	"app/calendar/calendar_module"
 	"app/config"
+	"app/customer/customer_module"
+	"app/event/event_module"
 	"app/internal/appcontext"
 	"app/kv/kv_module"
+	"app/order/order_module"
+	"app/phone/phone_module"
+	"app/review/review_module"
 	"app/user/user_module"
+	"app/worker/worker_module"
 
 	"go.uber.org/fx"
 )
@@ -51,5 +60,15 @@ func main() {
 		authn_module.HTTPModule,
 		user_module.AppModule,
 		kv_module.Module,
+
+		address_module.HTTPModule,
+		booking_module.Module,
+		calendar_module.HTTPModule,
+		customer_module.HTTPModule,
+		event_module.HTTPModule,
+		order_module.HTTPModule,
+		phone_module.HTTPModule,
+		review_module.HTTPModule,
+		worker_module.HTTPModule,
 	).Run()
 }
